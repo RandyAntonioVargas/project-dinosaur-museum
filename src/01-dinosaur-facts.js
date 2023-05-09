@@ -40,12 +40,6 @@ function getLongestDinosaur (dinosaurs) {
 return longestDinosaurInFeet
 }
 
- 
- 
-  
-    
-  
-
 
 /**
  * getDinosaurDescription()
@@ -113,7 +107,16 @@ function getDinosaurDescription(dinosaurs, id) {
  *  getDinosaursAliveMya(dinosaurs, 65, "unknown-key");
  *  //> ["WHQcpcOj0G"]
  */
-function getDinosaursAliveMya(dinosaurs, mya, key) {}
+function getDinosaursAliveMya(dinosaurs, mya, key) {
+for (let dinosaur of dinosaur){
+if (!dinosaur [tarKey]){
+  tarKey = "dinosaurId"
+}
+if (dinosaurs.mya.length === 1 && (mya === (dinosaurs.mya[0]) || (mya === dino.mya [0]- 1))){
+
+}
+}
+}
 
 module.exports = {
   getLongestDinosaur,

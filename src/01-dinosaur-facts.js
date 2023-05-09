@@ -10,7 +10,7 @@ const exampleDinosaurData = require("../data/dinosaurs");
 
 /**
  * getLongestDinosaur()
- * ---------------------
+ * --------------------
  * Returns an object with the longest dinosaur from the list. Converts from meters to feet.
  *
  * NOTE: To convert from meters to feet, multiply the meters by `3.281`.
@@ -22,7 +22,30 @@ const exampleDinosaurData = require("../data/dinosaurs");
  *  getLongestDinosaur(dinosaurs);
  *  //> { Brachiosaurus: 98.43 }
  */
-function getLongestDinosaur(dinosaurs) {}
+function getLongestDinosaur (dinosaurs) {
+  let longestDinosaur = null
+  for ( const dinosaur of dinosaurs ){
+    //console.log (Dinosaur)
+    if ( !longestDinosaur || dinosaur.lengthInMeters > longestDinosaur.lengthInMeters){
+    longestDinosaur = dinosaur
+   // console.log (longestDinosaur)
+  }
+  }
+  if ( longestDinosaur === null){
+    return {}
+  }
+ const longestDinosaurInFeet = {
+  [ longestDinosaur.name] : longestDinosaur.lengthInMeters * 3.281
+} 
+return longestDinosaurInFeet
+}
+
+ 
+ 
+  
+    
+  
+
 
 /**
  * getDinosaurDescription()
@@ -44,8 +67,27 @@ function getLongestDinosaur(dinosaurs) {}
  *  getDinosaurDescription(dinosaurs, "incorrect-id");
  *  //> "A dinosaur with an ID of 'incorrect-id' cannot be found."
  */
-function getDinosaurDescription(dinosaurs, id) {}
+// function getDinosaurDescription(dinosaurs, id) {
+//   for (let dinosaur of dinosaurs){
+//     if (id === dinosaur.dinsoaurId){
+//       years= Math.min(...dinosaur.mya)
+//       return `${dinosaur.name} (${dinosaur.pronunciation})\n${dinosaur.info} It lived in the ${dinosaur.period} period, over ${years} million years ago.`
 
+//     }
+//     //console.log (dinosaur)
+//     //console.log (id)
+//   }
+//    return "A dinosaur with an ID of 'incorrect-id' cannot be found."
+// }
+function getDinosaurDescription(dinosaurs, id) {
+  for (let dinosaur of dinosaurs) {
+    if (id === dinosaur.dinosaurId) { // if the STRING (id) equals dinosaur id
+      years = Math.min(...dinosaur.mya) // years EQUALS Math.min(find the smallest value in array) using the spread operator
+      return `${dinosaur.name} (${dinosaur.pronunciation})\n${dinosaur.info} It lived in the ${dinosaur.period} period, over ${years} million years ago.`
+    }
+  }
+  return "A dinosaur with an ID of 'incorrect-id' cannot be found." 
+}
 /**
  * getDinosaursAliveMya()
  * ---------------------

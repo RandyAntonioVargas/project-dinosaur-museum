@@ -106,16 +106,21 @@ function getDinosaurDescription(dinosaurs, id) {
  *
  *  getDinosaursAliveMya(dinosaurs, 65, "unknown-key");
  *  //> ["WHQcpcOj0G"]
- */
-function getDinosaursAliveMya(dinosaurs, mya, key) {
-  let myArray = []
-  let myNewArray = []
-if (dinosaurs.mya.length === 1){
-if (dinosaur.mya <= mya + 1){
-  myArray.push (dinosaur)
-}
-}
-}
+ */ // this function should return the Dino value as well ans the MYA value for the perticular search
+function getDinosaursAliveMya(dinosaurs, mya, key){
+let myArray = [];
+let myNewArray = [];
+dinosaurs.forEach(dinosaur => {
+  if(dinosaur.mya.length === 1){
+    if(dinosaur.mya >= mya && dinosaur.mya <= mya + 1){
+        myArray.push(dinosaur)
+    };
+  }else{
+    if(dinosaur.mya[0] >= mya && dinosaur.mya[1] <= mya){
+      myArray.push(dinosaur)
+    }
+  }
+})}
 
 
 module.exports = {

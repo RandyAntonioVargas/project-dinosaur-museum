@@ -108,15 +108,15 @@ function getDinosaurDescription(dinosaurs, id) {
  *  //> ["WHQcpcOj0G"]
  */
 function getDinosaursAliveMya(dinosaurs, mya, key) {
-for (let dinosaur of dinosaur){
-if (!dinosaur [tarKey]){
-  tarKey = "dinosaurId"
+  let myArray = []
+  let myNewArray = []
+if (dinosaurs.mya.length === 1){
+if (dinosaur.mya <= mya + 1){
+  myArray.push (dinosaur)
 }
-if (dinosaurs.mya.length === 1 && (mya === (dinosaurs.mya[0]) || (mya === dino.mya [0]- 1))){
+}
+}
 
-}
-}
-}
 
 module.exports = {
   getLongestDinosaur,

@@ -3,9 +3,18 @@
 
   You may use this data to test your functions. You may assume the shape of the data remains the same but that the values may change.
 */
+const dinosaurs = require("../data/dinosaurs");
 const exampleDinosaurData = require("../data/dinosaurs");
 const exampleRoomData = require("../data/rooms");
 // Do not change the lines above.
+function printDinoData (dinoArray){ 
+  for (let dino of dinoArray){
+    console.log (dino.name)
+  }
+
+
+}
+console.log (exampleDinosaurData)
 
 /**
  * getRoomByDinosaurName()

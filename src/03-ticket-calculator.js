@@ -54,7 +54,11 @@ const exampleTicketData = require("../data/tickets");
     calculateTicketPrice(tickets, ticketInfo);
     //> "Entrant type 'kid' cannot be found."
  */
-function calculateTicketPrice(ticketData, ticketInfo) {}
+function calculateTicketPrice(ticketData, ticketInfo) {
+  const ticketKeys = Object.keys(ticketData)
+  let ticketType = ticketKeys.find(ticket => ticket === ticketInfo.ticketType)
+  if(!ticketType){return `Ticket type '${ticketInfo.ticketType}' cannot be found`}
+}
 
 /**
  * purchaseTickets()
@@ -109,7 +113,28 @@ function calculateTicketPrice(ticketData, ticketInfo) {}
     purchaseTickets(tickets, purchases);
     //> "Ticket type 'discount' cannot be found."
  */
-function purchaseTickets(ticketData, purchases) {}
+function purchaseTickets(ticketData, purchases) {
+  if(!!purchasesArr[0].length){
+    return purchasesArr.reduce((previous, current) => previous + current)
+} else {
+  let ticket1 = "Thank you for visiting the Dinosaur Museum!\n-------------------------------------------\n"
+  let ticket2 = []
+  let ticket3 = `-------------------------------------------\nTOTAL: $${parseFloat((purchasesArr.reduce((previous, current) => previous + current))/100).toFixed(2)}`
+  for(const purchase of purchases){
+    let transaction = ""
+    if(purchase.entrantType === "adult"){transaction += "Adult "}
+    else if(purchase.entrantType === "child"){transaction += "Child "}
+    else if(purchase.entrantType === "senior"){transaction += "Senior "}
+    if(purchase.ticketType === "general"){transaction += "General "}
+    else if(purchase.ticketType === "membership"){transaction += "Membership "}
+    transaction += `Admission: $\n`
+    ticket2.push(transaction)
+  }
+  ticket2.join('')
+  return ticket1 + ticket2 + ticket3
+}
+}
+}
 
 // Do not change anything below this line.
 module.exports = {

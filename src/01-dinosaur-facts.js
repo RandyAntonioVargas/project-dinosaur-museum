@@ -7,7 +7,6 @@
 */
 const exampleDinosaurData = require("../data/dinosaurs");
 // Do not change the line above.
-
 /**
  * getLongestDinosaur()
  * --------------------
@@ -21,7 +20,7 @@ const exampleDinosaurData = require("../data/dinosaurs");
  * EXAMPLE:
  *  getLongestDinosaur(dinosaurs);
  *  //> { Brachiosaurus: 98.43 }
- */
+ */ // func is telling the "system" to find the dino with the longest heght as well as changing from meters to feet, the function is also letting it be known that if nothing is found, the value of "null" will appear
 function getLongestDinosaur (dinosaurs) {
   let longestDinosaur = null
   for ( const dinosaur of dinosaurs ){
@@ -106,7 +105,7 @@ function getDinosaurDescription(dinosaurs, id) {
  *
  *  getDinosaursAliveMya(dinosaurs, 65, "unknown-key");
  *  //> ["WHQcpcOj0G"]
- */ // this function should return the Dino value as well ans the MYA value for the perticular search
+ */ // this function should return the Dino value as well ans the MYA value for the perticular search, 
 function getDinosaursAliveMya(dinosaurs, mya, key){
 let myArray = [];
 let myNewArray = [];
